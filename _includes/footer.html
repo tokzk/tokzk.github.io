@@ -54,6 +54,9 @@
 
     <div class="footer-col-3 column">
       <p class="text">{{ site.description }}</p>
+      {% for category in  site.categories %}
+      <a href="/{{ category[0] }}">{{ category[0] }}</a>
+      {% endfor %}
     </div>
 
   </div>
