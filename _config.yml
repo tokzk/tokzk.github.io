@@ -9,5 +9,5 @@ twitter_username: tokzk
 github_username:  tokzk
 
 # Build settings
-markdown: kramdown
-permalink: pretty
+markdown: redcarpet
+permalink: /blog/:title
