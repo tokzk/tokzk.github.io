@@ -8,6 +8,10 @@ category_dir: ''
 twitter_username: tokzk
 github_username:  tokzk
 
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
+
 # Build settings
 markdown: redcarpet
 permalink: /blog/:title

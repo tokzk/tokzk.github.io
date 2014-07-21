@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<!-- This loops through the paginated posts -->
+<ul class="posts">
+{% for post in paginator.posts %}
+  <li>
+    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br>
+    {{ post.content | split:"<!-- more -->" | first | strip_html | truncate:300 }}
+    {% if post.content | size > 300 %}
+      <br>
+      <a href="{{ post.url | prepend: site.baseurl }}"><strong>Read more</strong></a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="/blog/page{{ paginator.previous_page }}" class="previous">Older</a>
+  {% else %}
+    <span class="previous">Older</span>
+  {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="/blog/page{{ paginator.next_page }}" class="next">Newer</a>
+  {% else %}
+    <span class="next ">Newer</span>
+  {% endif %}
+</div>
